@@ -13,23 +13,26 @@ a {
 }
 body {
     font-family: 'Poppins', sans-serif;
-    display: grid;
-    margin: 0 100px;
     font-size: 14px;
 }
 
+
 .menu {
+    margin: 25px 100px;
     display: grid;
+    grid-template-areas:'logo menu';
     grid-template-columns: 1.1fr 1fr;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
 }
 .menu .logo {
     font-size: 1.7em;
+    grid-area: logo;
 }
 .menu ul {
+    grid-area: menu;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
@@ -50,14 +53,16 @@ body {
 
 /* header */
 .header {
+    margin: 25px 100px;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     padding: 0 20px;
 }
 .content-header {
     display: grid;
     align-content: center;
+    /* justify-items: center; */
     gap: 12px;
 
 }
@@ -91,3 +96,300 @@ p.header-content {
     color: black;
 }
 
+/* main */
+main {
+    margin: 25px 100px;
+    display: grid;
+    /* border: 1px solid navy; */
+}
+/* logo-shop */
+.logo-shop {
+    margin: 25px 0;
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.logos{
+    display: flex;
+}
+
+.logo-shop img{
+    width: 100%;  
+}
+
+/* products */
+.products{
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px;
+}
+
+.products h2{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+/* collection */
+.card-products {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.card-img{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+.card-content {
+    margin: 0 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.card-content h2 {
+    font-weight: 500;
+    color: #18191F;
+    text-align: left;
+    margin-bottom: 5px;
+}
+p.price {
+    font-size: 24px;
+    font-weight: 300;
+}
+.rate {
+    display: flex;
+    margin: 5px 0;
+}
+.rate-start {
+    color: #FB8200;
+    margin-right: 5px;
+}
+p.detail {
+    color: #787885;
+    font-size: 14px;
+    font-weight: 500;
+}
+.see-more {
+    text-align: right;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    font-size: 1.2em;
+    padding: 5px 0;
+}
+.see-more a{
+    text-decoration: none;
+    color: #787885;
+}
+.see-more a:hover{
+    color: #18191F;
+}
+
+/* service */
+.service {
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* border: 1px solid purple; */
+    padding: 25px 20px;
+}
+.content-service {
+    display: grid;
+    align-content: center;
+    gap: 10px;
+    padding: 0 0 0 30px;
+
+}
+h1.service-title {
+    font-size:2.3em;
+}
+p.service-content {
+    font-size: 1.1em;
+}
+.preebook {
+    margin: 5px 0;
+    width: 140px;
+    border: 2px dotted black;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    transition: .5s;
+}
+.preebook a{
+    color: rgb(97, 97, 97);
+}
+.preebook:hover {
+    background-color: rgb(196, 196, 196);
+    border: 2px solid transparent;
+    color: black;
+}
+
+/* footer */
+.footer {
+    background-color: rgba(10, 8, 38, 1);
+    color: white;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 25px 0;
+    gap: 5px;
+}
+.social-icon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.bg-icon {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+}
+.bg-icon a {
+    color: white;
+}
+.bg-icon a:hover {
+    transform: scale(110%);
+}
+.footer h2 {
+    font-size: 1.5em;
+}
+
+
+
+/* responsive breakpoint */
+/* @media (max-width: 820px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .menu{
+        margin: 25px 50px;
+        padding: 0;
+        grid-template-columns: 0.75fr minmax(500px, 1fr);
+        gap: 0;
+        width: 100%;
+    }
+    .menu ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .header {
+        padding: 0;
+        margin: 25px 50px;
+    }
+    h1.header-title{
+        font-size: 1.75em;
+    }
+    p.header-content{
+        font-size: 0.9em;
+    }
+    .preebook {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+    .logo-shop {
+        justify-content: center;
+    }
+    .logos {
+        width: 25%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 10px;
+    }
+    .logos img{
+        width: 60%;
+    }
+
+    main {
+        margin: 25px 50px;
+        padding: 0;
+    }
+    .img-service {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+} */
+
+
+@media (max-width: 500px) {
+    .menu{
+        display: flex;
+        flex-direction: column;
+        margin: 25px 10px;
+    }
+    ul.menu-list{
+        display: flex;
+        justify-content: space-between;
+    }
+    ul.menu-list a {
+        padding: 5px;
+    }
+
+
+    /* header */
+    .header {
+        margin: 0 10px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'image'
+        'content';
+        text-align: center;
+    }
+    .content-header{
+        grid-area: content;
+        justify-items: center; 
+    }
+    .preebook {
+        width: 100px;
+        padding: 5px;
+    }
+
+    .logo-shop {
+        justify-content: center;
+    }
+    .logos {
+        width: 25%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 5px;
+    }
+    .logos img{
+        width: 65%;
+    }
+    main {
+        margin: 0 10px;
+    }
+
+    .service {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'content'
+        'image';
+        text-align: center;
+    }
+    .content-service{
+        grid-area: content;
+        padding: 0;
+        justify-items: center;
+        margin-bottom: 15px;
+    }
+    .img-service {
+        grid-area: image;
+    }
+}
